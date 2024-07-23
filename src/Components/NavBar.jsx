@@ -142,12 +142,12 @@ const NavBar = () => {
           </h4>
           {isShopOpen && (
             <div className="shop-links links">
-              <a href="/e-commerce-website/shop/collection">All</a>
-              <a href="/e-commerce-website/shop/complexion">Complexion</a>
-              <a href="/e-commerce-website/shop/skincare">Skincare</a>
-              <a href="/e-commerce-website/shop/lips-cheeks">Lips & Cheeks</a>
-              <a href="/e-commerce-website/shop/tools">Tools</a>
-              <a href="/e-commerce-website/shop/new-arrivals">New In</a>
+              <Link to="/e-commerce-website/shop/collection">All</Link>
+              <Link to="/e-commerce-website/shop/complexion">Complexion</Link>
+              <Link to="/e-commerce-website/shop/skincare">Skincare</Link>
+              <Link to="/e-commerce-website/shop/lips-cheeks">Lips & Cheeks</Link>
+              <Link to="/e-commerce-website/shop/tools">Tools</Link>
+              <Link to="/e-commerce-website/shop/new-arrivals">New In</Link>
             </div>
           )}
             
