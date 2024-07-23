@@ -5,25 +5,18 @@ import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
 
-  const navigate = useNavigate();
-
-
-
-  const navigateTo = (path) => {
-    navigate(path)
-  }
 
   return (
     <div className="banner__container container"> 
        <div className="product">
-        <img src={sale} alt="Complexion" onClick={() => navigateTo("/e-commerce-website/shop/complexion")}/>
+        <img src={sale} alt="Complexion"/>
         <div className="overlay">
           <h2>COMPLEXION</h2>
           <a href="/e-commerce-website/shop/complexion">Discover</a>
         </div>
       </div>
       <div className="product">
-        <img src={skincare} alt="Skincare"  onClick={() => navigateTo('/e-commerce-website/shop/skincare')}/>
+        <img src={skincare} alt="Skincare"/>
         <div className="overlay">
           <h2>SKINCARE</h2>
           <a href="/e-commerce-website/shop/skincare">Discover</a>

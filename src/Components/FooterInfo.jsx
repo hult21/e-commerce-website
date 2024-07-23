@@ -72,7 +72,7 @@ const FooterInfo = () => {
           <p>HELP</p>
           <div className="footer-links">
             <Link>FAQ</Link>
-            <Link>CARE GUIDE</Link>
+            <Link>Care Guide</Link>
           </div>
         </div>
 
@@ -82,9 +82,9 @@ const FooterInfo = () => {
             <a href={`mailto:${address}`} className="email-link">
               {address}
             </a>
-            <Link>Instagram</Link>
-            <Link>LinkedIn</Link>
-            <Link>Pinterest</Link>
+            <Link to="https://www.instagram.com/iliabeauty/?hl=en">Instagram</Link>
+              <Link to="https://www.linkedin.com/company/ilia-beauty/">LinkedIn</Link>
+              <Link to="https://www.pinterest.com/iliabeauty/">Pinterest</Link>
           </div>
         </div>
       </section>
