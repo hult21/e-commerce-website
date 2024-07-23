@@ -9,7 +9,22 @@ import cors from "cors";
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:3030', methods: ['GET', 'POST', 'OPTIONS'], allowedHeaders: ['Content-Type'] }));
+
+const allowedOrigins = ['http://localhost:3030', 'https://hult21.github.io'];
+
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+    methods: ['GET', 'POST', 'OPTIONS'],
+    allowedHeaders: ['Content-Type'],
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 app.options('*', cors()); // Enable preflight requests for all routes
@@ -42,8 +57,8 @@ app.post('/create-checkout-session', async (req, res) => {
                 },
                 quantity: item.quantity
             })),
-            success_url: 'http://localhost:3030/success',
-            cancel_url: 'http://localhost:3030/cancel'
+            success_url: 'https://hult21.github.io/e-commerce-website/success',
+            cancel_url: 'https://hult21.github.io/e-commerce-website/cancel'
         };
 
         console.log('Checkout session params:', params); // Log params sent to Stripe
