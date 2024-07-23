@@ -1,0 +1,216 @@
+nav {
+  width: 100%;
+  margin: auto;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 99;
+  background: transparent;
+  transition: all 0.3s ease-in;
+  padding: 0 2rem; /* Add padding to give some space on the sides */
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex: 1;
+}
+
+.nav__links a {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.logo_link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+}
+
+.logo_link:hover {
+  border: none;
+}
+
+nav a h2 {
+  font-family: "El Messiri", sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  line-height: 15px;
+}
+
+nav a h2 span {
+  font-size: 0.6rem;
+  font-weight: normal;
+  font-family: sans-serif;
+}
+
+.nav__buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex: 1;
+  padding-right: 2rem;
+}
+
+.nav__buttons button {
+  color: #fff;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.open-cart {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+nav.scrolled a,
+nav.scrolled .nav__links a,
+nav.scrolled .nav__buttons button,
+nav.scrolled p,
+nav.scrolled h2
+nav.scrolled .hamburger-menu {
+  color: #000;
+}
+
+/* Mobile menu styles */
+.hamburger-menu {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+  z-index: 100;
+  color: #000;
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20rem;
+  height: 100%;
+  background: #fff;
+  z-index: 99;
+  padding: 0 1rem;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu header {
+    padding: 1.5rem 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid silver;
+}
+
+.mobile-menu header button {
+    font-size: 1rem;
+}
+
+.mobile-menu .logo-mobile {
+    text-align: center;
+    line-height: 15px;
+}
+
+.logo-mobile a { 
+    font-family: "El Messiri", serif;
+    font-size: 1.8rem; 
+    font-weight: 800;
+    border: none;
+}
+
+.logo-mobile a span {
+    font-size: .6rem;
+    font-family: sans-serif;
+    font-weight: normal;
+}
+
+.mobile-menu .open-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 0;
+    font-size: .8rem;
+    text-transform: uppercase;
+    opacity: .6;
+    border-bottom: 1px solid silver;
+}
+
+.mobile-menu .open-search span { font-size: 1.3rem;}
+
+.mobile__links {
+    margin-left: -2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    cursor: pointer;
+}
+
+.mobile__links h4 {
+    font-size: 1.2rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid silver;
+}
+
+
+.mobile__links h4 span {
+    color: #000;
+    transition: all .3s ease-out;
+}
+
+.mobile__links h4 span.rotate {
+    transform: rotate(45deg);
+}
+
+.mobile__links .links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: start;
+    text-transform: uppercase;
+    gap: 1rem;
+    font-size: .8rem;
+}
+
+@media (max-width: 768px) {
+
+    .hamburger-menu { display: block;}
+    .nav__links,
+    .nav__buttons {
+        display: none;
+    }
+
+    .logo-container {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
+}
