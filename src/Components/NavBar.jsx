@@ -116,7 +116,7 @@ const NavBar = () => {
             ✕
           </button>
           <div className="logo-mobile">
-            <a href="/">
+            <a href="//e-commerce-website">
               ILIA <br />
               <span>BEAUTY</span>
             </a>
@@ -164,9 +164,9 @@ const NavBar = () => {
               <a href={`mailto:${address}`} className="email-link">
                 {address}
               </a>
-              <Link>Instagram</Link>
-              <Link>LinkedIn</Link>
-              <Link>Pinterest</Link>
+              <Link to="https://www.instagram.com/iliabeauty/?hl=en">Instagram</Link>
+              <Link to="https://www.linkedin.com/company/ilia-beauty/">LinkedIn</Link>
+              <Link to="https://www.pinterest.com/iliabeauty/">Pinterest</Link>
             </div>
           )}
         </ul>
