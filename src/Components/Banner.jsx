@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 const Banner = () => {
 
-
   return (
     <div className="banner__container container"> 
        <div className="product">

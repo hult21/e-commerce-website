@@ -5,6 +5,6 @@ const CURRENCY_FORMATTER = new Intl.NumberFormat(undefined, {
   });
   
   export default function formatCurrency(cents) {
-    const dollars = cents / 100;
-    return CURRENCY_FORMATTER.format(dollars);
+    const euro = cents / 100;
+    return CURRENCY_FORMATTER.format(euro);
   }
