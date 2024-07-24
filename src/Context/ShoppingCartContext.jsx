@@ -77,9 +77,7 @@ export function ShoppingCartProvider({ children }) {
 
 
     const handleCheckout = async (cartItems) => {
-        console.log('Cart Items at Checkout:', cartItems); // Log cart items
         if (!Array.isArray(cartItems)) {
-            console.log('no array', cartItems);
             return;
         }
         const stripe = await getStripe();
@@ -87,7 +85,7 @@ export function ShoppingCartProvider({ children }) {
         const checkoutItems = cartItems.map(({ id, name, price, quantity, photo }) => {
             if (isNaN(price)) {
                 console.error(`Invalid price for item ${name}:`, price);
-                console.error('Invalid cart item:', { id, name, price, quantity, photo }); // Log the entire item
+                console.error('Invalid cart item:', { id, name, price, quantity, photo }); 
                 return null; 
             }
             return {
@@ -105,7 +103,6 @@ export function ShoppingCartProvider({ children }) {
     
 
         if (checkoutItems.length === 0) {
-            console.error('No valid items to checkout.');
             return;
         }
 
@@ -115,7 +112,7 @@ export function ShoppingCartProvider({ children }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-            body: JSON.stringify({ items: checkoutItems }), // Wrapped in items key
+            body: JSON.stringify({ items: checkoutItems }), 
             });
 
             if (!response.ok) {

@@ -4,7 +4,7 @@ import FilterMenu from './FilterMenu';
 
 
 
-const Header = ({ onFilterChange, selectedFilter, links, category, totalProducts }) => {
+const Header = ({ onFilterChange, links, category, totalProducts }) => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
 

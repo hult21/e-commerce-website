@@ -52,7 +52,7 @@ const FooterInfo = () => {
                   Please enter a valid email address
                 </div>
               )}
-              <button type="submit">
+              <button type="submit" onClick={handleSubmit}>
                 <RiArrowRightLine />
               </button>
             </div>

@@ -9,7 +9,6 @@ import ProductDetails from "./ProductDetails";
 const ProductPage = () => {
   const { id } = useParams();
   const { product, loading, error } = useFetchProduct(id);
-  const { openCart, increaseCartQuantity } = useShoppingCart();
   const [thumbnail, setThumbnail] = useState(null);
 
  
