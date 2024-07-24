@@ -59,7 +59,7 @@ const Shop = () => {
         break;
     }
     return filtered;
-  }, [products, sortBy, category]);
+  }, [products, sortBy, category, items]);
 
   const categoryLinks = navLinks.slice(1, 7);
   const totalProducts = filteredProducts.length;

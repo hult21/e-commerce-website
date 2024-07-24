@@ -143,7 +143,7 @@ export function ShoppingCartProvider({ children }) {
         cartQuantity,
         handleCheckout,
         clearCart
-    }), [cartItems, cartQuantity, getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, openCart, closeCart]);
+    }), [cartItems, cartQuantity, getItemQuantity, increaseCartQuantity, decreaseCartQuantity, removeFromCart, openCart, closeCart, clearCart, handleCheckout]);
 
     return (
         <ShoppingCartContext.Provider value={contextValue}>

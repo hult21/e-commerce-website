@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import useFetchProduct from "../Hooks/useFetchProduct";
 import { useParams } from "react-router-dom";
-import { useShoppingCart } from "../Context/ShoppingCartContext";
 import Footer from "./Footer";
 import ThumbnailGallery from "./ThumbnailGallery";
 import ProductDetails from "./ProductDetails";

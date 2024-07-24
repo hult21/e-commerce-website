@@ -4,7 +4,6 @@ import shopall from '../src/Images/531ff7f9a972c894ba3f47c45b2d5566.jpg'
 import tools from '../src/Images/944a22521691062b64feda2009d8b8e5.jpg'
 import complexion from '../src/Images/f24d598df369b3976855b819060c7105.jpg'
 import eyes from '../src/Images/355a9c56063cee32a46127dfa9b24dcb.jpg'
-import best from '../src/Images/a8113e8c88bcb0029f5f4775deeedb7b.jpg'
 
 
 export const navLinks = [

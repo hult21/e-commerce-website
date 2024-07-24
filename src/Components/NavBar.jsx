@@ -116,10 +116,10 @@ const NavBar = () => {
             ✕
           </button>
           <div className="logo-mobile">
-            <a href="//e-commerce-website">
+            <Link to="/">
               ILIA <br />
               <span>BEAUTY</span>
-            </a>
+            </Link>
           </div>
           <button onClick={handleCart}>
             <BsFillHandbagFill /> ({cartQuantity})
