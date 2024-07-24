@@ -76,10 +76,11 @@ export function ShoppingCartProvider({ children }) {
 
 
 
-    const handleCheckout = async (cartItems) => {
+    const handleCheckout = useCallback(async (cartItems) => {
         if (!Array.isArray(cartItems)) {
             return;
         }
+
         const stripe = await getStripe();
 
         const checkoutItems = cartItems.map(({ id, name, price, quantity, photo }) => {
@@ -88,6 +89,7 @@ export function ShoppingCartProvider({ children }) {
                 console.error('Invalid cart item:', { id, name, price, quantity, photo }); 
                 return null; 
             }
+
             return {
                 price_data: {
                     currency: 'eur',
@@ -100,8 +102,6 @@ export function ShoppingCartProvider({ children }) {
             };
         }).filter(item => item !== null);
 
-    
-
         if (checkoutItems.length === 0) {
             return;
         }
@@ -112,7 +112,7 @@ export function ShoppingCartProvider({ children }) {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-            body: JSON.stringify({ items: checkoutItems }), 
+                body: JSON.stringify({ items: checkoutItems }), 
             });
 
             if (!response.ok) {
@@ -130,7 +130,7 @@ export function ShoppingCartProvider({ children }) {
         } catch (error) {
             console.error('Error during checkout:', error);
         }
-    };
+    }, [clearCart]);
 
     const contextValue = useMemo(() => ({
         getItemQuantity,

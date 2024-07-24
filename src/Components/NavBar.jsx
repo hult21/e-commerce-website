@@ -115,7 +115,7 @@ const NavBar = () => {
           <button className="close-menu" onClick={toggleMobileMenu}>
             ✕
           </button>
-          <div className="logo-mobile">
+          <div className="logo-mobile" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <Link to="/">
               ILIA <br />
               <span>BEAUTY</span>
@@ -141,7 +141,7 @@ const NavBar = () => {
             </span>
           </h4>
           {isShopOpen && (
-            <div className="shop-links links">
+            <div className="shop-links links" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               <Link to="/shop/collection">All</Link>
               <Link to="/shop/complexion">Complexion</Link>
               <Link to="/shop/skincare">Skincare</Link>
@@ -160,7 +160,7 @@ const NavBar = () => {
             </span>
           </h4>
           {isContactsOpen && (
-            <div className="contact-links links">
+            <div className="contact-links links" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               <a href={`mailto:${address}`} className="email-link">
                 {address}
               </a>

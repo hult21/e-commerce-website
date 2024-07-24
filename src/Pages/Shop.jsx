@@ -15,24 +15,18 @@ const Shop = () => {
   const { products, loading, error } = useFetchProducts();
 
   const [sortBy, setSortBy] = useState("");
-  const [items, setItems] = useState([]);
 
   useEffect(() => {
     setSortBy("");
   }, [category]);
 
-  useEffect(() => {
-    if (products.length > 0) {
-      setItems(shuffleMethod(products));
-    }
-  }, [products]);
 
   const handleFilterChanger = useCallback((filter) => {
     setSortBy(filter);
   }, []);
 
   const filteredProducts = useMemo(() => {
-    let filtered = products;
+    let filtered = shuffleMethod(products);
 
     if (category) {
      if (category === "new-arrivals") {
@@ -59,7 +53,7 @@ const Shop = () => {
         break;
     }
     return filtered;
-  }, [products, sortBy, category, items]);
+  }, [products, sortBy, category]);
 
   const categoryLinks = navLinks.slice(1, 7);
   const totalProducts = filteredProducts.length;
