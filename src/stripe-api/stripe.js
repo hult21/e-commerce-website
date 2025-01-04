@@ -27,12 +27,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
-app.options('*', cors()); // Enable preflight requests for all routes
+app.options('*', cors()); 
 
 app.post('/create-checkout-session', async (req, res) => {
     try {
-        const { items } = req.body; // Changed cartItems to items
-        console.log('Received cart items:', items); // Log received cart items
+        const { items } = req.body; 
+        console.log('Received cart items:', items); 
 
         if (!Array.isArray(items) || items.length === 0) {
             return res.status(400).json({ error: 'Invalid cart items' });
@@ -57,16 +57,16 @@ app.post('/create-checkout-session', async (req, res) => {
                 },
                 quantity: item.quantity
             })),
-            success_url: 'https://hult21.github.io/e-commerce-website/success',
-            cancel_url: 'https://hult21.github.io/e-commerce-website/cancel'
+            success_url: 'http://localhost:3030/e-commerce-website/success',
+            cancel_url: 'http://localhost:3030/e-commerce-website/cancel'
         };
 
-        console.log('Checkout session params:', params); // Log params sent to Stripe
+        console.log('Checkout session params:', params); 
 
         const session = await stripe.checkout.sessions.create(params);
         res.status(200).json(session);
     } catch (err) {
-        console.error('Error creating checkout session:', err); // Log server-side error
+        console.error('Error creating checkout session:', err); 
         res.status(err.statusCode || 500).json({ error: err.message });
     }
 });
